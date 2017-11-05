@@ -55,7 +55,7 @@ cd avenue_code/product && \
 echo "## Done" 
 ```
 
-### Item 8 - Subitem 1
+### Item 8 - Subitem 1 - How to compile and run the application with an example for each call.
 
 Now that you already have the source code and you are inside the project folder. I just need to execute the command bellow to compile and the run the project:
  
@@ -63,6 +63,8 @@ Now that you already have the source code and you are inside the project folder.
 mvn install &&
 mvn spring-boot:run 
 ```
+
+Now the project is up and fully operational.
 
 So, the database has no data at that moment, so you need first to put some data into the project.
 
@@ -252,31 +254,30 @@ You only need to inform a valid id.
 
 To set any child for a product you can use the command on (a).
 
+i. Get set of images for specific product
 
+So, to Get images for a specific product you need to perform this:
 
+```
+curl --request GET \
+  --url http://localhost:8070/image/1 \
+  --header 'content-type: application/json'
+```
 
-????????????????????
+To set any image for a product you can use the command on (a).
+
+### Item 8 - Subitem 2 - How to run the suite of automated tests.
+
+Inside the project "product" folder you only need to execute:
+
+```
+mvn test
+```
+
+### Item 8 - Subitem 3 - Mention anything that was asked but not delivered and why, and any additional comments.
+
+So, i think that i have covered all requirements for this challenge. I hope you enjoy this project. And also i hope that i get the job :D
+
 Also you can use the [insomnia](https://insomnia.rest/) with the provided [??????.json](https://?????er/Insomnia_2017-07-15.json) to make some tests.
 
-You need to use a machine:
-
-1) 64Bits
-2) With wget, nohup, unzip and all utils that a regular linux distribuition need to have.
-3) Access to a valid internet connection.
-
-So, the service will be running on the 8070 port and you can make tests on console:
-```
-```
-
-Also i put a vagrant [machine](https://???????u-vagrant) that you can use to test this project.
-
-Execute this:
-
-```
-cd ubuntu-vagrant/
-vagrant up
-```
-
-Then in a few moments (or hours :D ) you can test in your browser on the localhost too.
-
-Under development.
+thanks,
