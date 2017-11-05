@@ -57,7 +57,7 @@ echo "## Done"
 
 ### Item 8 - Subitem 1 - How to compile and run the application with an example for each call.
 
-Now that you already have the source code and you are inside the project folder. I just need to execute the command bellow to compile and the run the project:
+Now that you already have the source code and you are inside the project folder. You just need to execute the command bellow to compile and the run the project:
  
 ```
 mvn install &&
