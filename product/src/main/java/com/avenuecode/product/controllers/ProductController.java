@@ -88,7 +88,7 @@ public class ProductController extends BaseController<Product, Long> {
 	 */
 	@RequestMapping(value = "/product", produces = { "application/json" }, method = { RequestMethod.POST })
 	public @ResponseBody Response<Long> insertProduct(@RequestBody Product product) {
-		return new Response<Long>(SUCCESS, null, this.getService().insert(product));
+		return new Response<Long>(() -> this.getService().insert(product));
 
 	}
 
@@ -101,7 +101,7 @@ public class ProductController extends BaseController<Product, Long> {
 	public @ResponseBody Response<List<Product>> listAllProducts(
 			@RequestParam(value = "all", required = false, defaultValue = "false") boolean all) {
 
-		return new Response<List<Product>>(SUCCESS, null, this.getService().findAll(all));
+		return new Response<List<Product>>(() -> this.getService().findAll(all));
 
 	}
 
@@ -113,7 +113,7 @@ public class ProductController extends BaseController<Product, Long> {
 	@RequestMapping(value = "/product/{id}", produces = { "application/json" }, method = { RequestMethod.GET })
 	public @ResponseBody Response<Product> getProductById(@PathVariable Long id,
 			@RequestParam(value = "all", required = false, defaultValue = "false") boolean all) {
-		return new Response<Product>(SUCCESS, null, this.getService().findById(id, all));
+		return new Response<Product>(() -> this.getService().findById(id, all));
 	}
 
 	/**
@@ -123,7 +123,7 @@ public class ProductController extends BaseController<Product, Long> {
 	 */
 	@RequestMapping(value = "/product/{id}/childs", produces = { "application/json" }, method = { RequestMethod.GET })
 	public @ResponseBody Response<List<Product>> getProductChildsById(@PathVariable Long id) {
-		return new Response<List<Product>>(SUCCESS, null, this.getService().findProductChildsById(id));
+		return new Response<List<Product>>(() ->  this.getService().findProductChildsById(id));
 	}
 
 	/**
@@ -134,7 +134,7 @@ public class ProductController extends BaseController<Product, Long> {
 	@RequestMapping(value = "/product/{id}/images", produces = { "application/json" }, method = { RequestMethod.GET })
 	public @ResponseBody Response<List<Image>> getProductImagesById(@PathVariable Long id) {
 
-		return new Response<List<Image>>(SUCCESS, null, this.getImageService().findByProductId(id));
+		return new Response<List<Image>>(() -> this.getImageService().findByProductId(id));
 
 	}
 

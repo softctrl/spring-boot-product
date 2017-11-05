@@ -54,7 +54,7 @@ public class ImageController extends BaseController<Image, Long> {
 	@RequestMapping(value = "/image", produces = { "application/json" }, method = { RequestMethod.POST })
 	public @ResponseBody Response<Long> insertProduct(@RequestBody Image image) {
 
-		return new Response<Long>(SUCCESS, null, this.getService().insert(image));
+		return new Response<Long>(() -> this.getService().insert(image));
 
 	}
 
@@ -65,7 +65,7 @@ public class ImageController extends BaseController<Image, Long> {
 	@RequestMapping(value = "/image", produces = { "application/json" }, method = RequestMethod.GET)
 	public @ResponseBody Response<List<Image>> listAllImages() {
 
-		return new Response<List<Image>>(SUCCESS, null, this.getService().findAll());
+		return new Response<List<Image>>(() -> this.getService().findAll());
 
 	}
 
@@ -76,7 +76,7 @@ public class ImageController extends BaseController<Image, Long> {
 	 */
 	@RequestMapping(value = "/image/{id}", produces = { "application/json" }, method = { RequestMethod.GET })
 	public @ResponseBody Response<Image> getImageById(@PathVariable Long id) {
-		return new Response<Image>(SUCCESS, null, this.getService().findById(id));
+		return new Response<Image>(() -> this.getService().findById(id));
 	}
 
 	/**

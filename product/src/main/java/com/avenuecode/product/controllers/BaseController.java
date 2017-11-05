@@ -53,10 +53,40 @@ public class BaseController<E, I> {
 	@JsonInclude(JsonInclude.Include.NON_EMPTY)
 	public static final class Response<R> {
 
+		/**
+		 * 
+		 * @author timoshenko
+		 *
+		 * @param <R>
+		 */
+		public interface Action<R> {
+			R execute();
+		}
+
 		private int code = SUCCESS;
 		private String msg = null;
 		private R res = null;
 
+		/**
+		 * 
+		 * @param action
+		 */
+		public Response(Action<R> action) {
+			try {
+				this.res = action.execute();
+				this.code = SUCCESS;
+			} catch (Exception ex) {
+				this.code = ERROR;
+				this.msg = ex.getLocalizedMessage();
+			}
+		}
+
+		/**
+		 * 
+		 * @param code
+		 * @param msg
+		 * @param res
+		 */
 		public Response(int code, String msg, R res) {
 			this.code = code;
 			this.msg = msg;
