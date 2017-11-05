@@ -16,6 +16,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import com.avenuecode.product.domain.Image;
 import com.avenuecode.product.domain.Product;
+import com.avenuecode.product.services.impl.ImageServiceImpl;
 import com.avenuecode.product.services.impl.ProductServiceImpl;
 
 /*
@@ -54,6 +55,9 @@ public class ProductTest {
 	@Autowired()
 	private ProductServiceImpl productService;
 
+	@Autowired()
+	private ImageServiceImpl imageService;
+
 	@Before
 	public void setUp() throws Exception {
 
@@ -84,10 +88,23 @@ public class ProductTest {
 	public void testPersistence() {
 		// given
 
+		// Insert many products:
 		mockProducts().forEach((p) -> {
-			Assert.assertNotNull(productService.insert(p));
-			Assert.assertEquals(++c, productService.count());
+			Assert.assertNotNull(this.productService.insert(p));
+			Assert.assertEquals(++c, this.productService.count());
 		});
+
+		// Asert we have many images as products:
+		Assert.assertEquals(this.productService.count() * 10, this.imageService.count());
+
+		// Remove one by one:
+		this.productService.findAll().forEach((p) -> this.productService.remove(p.getId()));
+
+		// Assert is empty:
+		Assert.assertEquals(0, this.productService.count());
+
+		// Assert is empty:
+		Assert.assertEquals(0, this.imageService.count());
 
 	}
 
