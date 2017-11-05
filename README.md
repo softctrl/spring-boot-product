@@ -182,13 +182,14 @@ e. Update Images:
 
 ```
 curl --request PUT \
-  --url http://localhost:8070/product \
+  --url http://localhost:8070/image \
   --header 'content-type: application/json' \
   --data '{
 	"product": {
 		"id": 1
 	},
-	"type":"jpg"
+	"id":1,
+	"type":"png"
 }'
 ```
 

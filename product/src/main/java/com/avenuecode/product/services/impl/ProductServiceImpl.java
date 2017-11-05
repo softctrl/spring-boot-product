@@ -170,9 +170,11 @@ public class ProductServiceImpl implements BaseService<Product, Long> {
 	public void update(Product product) {
 
 		if (this.getRepo().exists(Objects.requireNonNull(product, "ERROR: Null Product informed.").getId())) {
-			product.getImages().forEach((i) -> {
-				i.setProduct(product);
-			});
+			if (Objects.nonNull(product.getImages())) {
+				product.getImages().forEach((i) -> {
+					i.setProduct(product);
+				});
+			}
 			if (Objects.nonNull(product.getParentProduct())) {
 				product.setParentProduct(this.getRepo().findOne(product.getParentProduct().getId()));
 			}

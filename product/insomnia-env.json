@@ -1,17 +1,16 @@
 {
 	"_type": "export",
 	"__export_format": 3,
-	"__export_date": "2017-11-05T00:22:45.187Z",
-	"__export_source": "insomnia.desktop.app:v5.8.3",
+	"__export_date": "2017-11-05T16:32:24.481Z",
+	"__export_source": "insomnia.desktop.app:v5.10.1",
 	"resources": [
 		{
 			"_id": "wrk_21dfbb21eb6046a5a59ff7a1c381d63b",
 			"parentId": null,
-			"modified": 1504994837352,
+			"modified": 1509898727860,
 			"created": 1504994837352,
-			"name": "AvenueCode",
+			"name": "AvenueCode Challenge",
 			"description": "",
-			"certificates": [],
 			"_type": "workspace"
 		},
 		{
@@ -37,7 +36,7 @@
 		{
 			"_id": "req_f8328de6bc4d40d29823392094995f9c",
 			"parentId": "wrk_21dfbb21eb6046a5a59ff7a1c381d63b",
-			"modified": 1509840502714,
+			"modified": 1509898825297,
 			"created": 1504994845157,
 			"url": "http://localhost:8070/product?all=true",
 			"name": "Get All Products",
@@ -95,9 +94,9 @@
 		{
 			"_id": "req_e46eda758a9a498588b5b0b54b76dec9",
 			"parentId": "wrk_21dfbb21eb6046a5a59ff7a1c381d63b",
-			"modified": 1509840636015,
+			"modified": 1509899380112,
 			"created": 1509782470383,
-			"url": "http://localhost:8070/product/1?all=false",
+			"url": "http://localhost:8070/product/1?all=true",
 			"name": "Get Product By ID",
 			"description": "",
 			"method": "GET",
@@ -153,9 +152,9 @@
 		{
 			"_id": "req_2e1ac5c034274764b99a8f13952fd431",
 			"parentId": "wrk_21dfbb21eb6046a5a59ff7a1c381d63b",
-			"modified": 1509833139900,
+			"modified": 1509885484786,
 			"created": 1509783240477,
-			"url": "http://localhost:8070/product/3",
+			"url": "http://localhost:8070/product/1",
 			"name": "Delete Product",
 			"description": "",
 			"method": "DELETE",
@@ -269,9 +268,9 @@
 		{
 			"_id": "req_fd9e57c69ee94714814de4adf65d56fa",
 			"parentId": "wrk_21dfbb21eb6046a5a59ff7a1c381d63b",
-			"modified": 1509840617632,
+			"modified": 1509847811770,
 			"created": 1509833164288,
-			"url": "http://localhost:8070/image/5",
+			"url": "http://localhost:8070/image/1",
 			"name": "Get Image By ID",
 			"description": "",
 			"method": "GET",
@@ -298,9 +297,9 @@
 		{
 			"_id": "req_b221e28e9f9048afa37d506361ef3416",
 			"parentId": "wrk_21dfbb21eb6046a5a59ff7a1c381d63b",
-			"modified": 1509833214046,
+			"modified": 1509886709201,
 			"created": 1509833190478,
-			"url": "http://localhost:8070/image/1",
+			"url": "http://localhost:8070/image/2",
 			"name": "Delete Image",
 			"description": "",
 			"method": "DELETE",
@@ -327,10 +326,10 @@
 		{
 			"_id": "req_ddbf5ab9fea14f14a20b003c63933bef",
 			"parentId": "wrk_21dfbb21eb6046a5a59ff7a1c381d63b",
-			"modified": 1509834124501,
+			"modified": 1509848239828,
 			"created": 1509834048745,
 			"url": "http://localhost:8070/product/1/childs",
-			"name": "Get Product Childs By ID",
+			"name": "Get Product Chields By ID",
 			"description": "",
 			"method": "GET",
 			"body": {
@@ -376,6 +375,35 @@
 			],
 			"authentication": {},
 			"metaSortKey": -1504738209584.3125,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_b10f475ffad94954af90a04662605763",
+			"parentId": "wrk_21dfbb21eb6046a5a59ff7a1c381d63b",
+			"modified": 1509899272751,
+			"created": 1509845271057,
+			"url": "http://localhost:8070/image",
+			"name": "Update Image",
+			"description": "",
+			"method": "PUT",
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"product\": {\n\t\t\"id\": 1\n\t},\n\t\"id\":1,\n\t\"type\":\"png\"\n}"
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Content-Type",
+					"value": "application/json",
+					"id": "pair_4eae73eff29644e496d97fc5a685dc63"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1504674050657.1562,
 			"settingStoreCookies": true,
 			"settingSendCookies": true,
 			"settingDisableRenderRequestBody": false,

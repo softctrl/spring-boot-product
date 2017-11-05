@@ -130,7 +130,10 @@ public class ImageServiceImpl implements BaseService<Image, Long> {
 	@Override
 	public void update(Image entity) {
 
-		if (this.getRepo().exists(Objects.requireNonNull(entity, "ERROR: Null Image informed.").getId())) {
+		Objects.requireNonNull(entity, "ERROR: Null Image informed.");
+		Objects.requireNonNull(entity.getId(), "ERROR: Null Image ID informed.");
+
+		if (this.getRepo().exists(entity.getId())) {
 			if (Objects.nonNull(entity.getProduct())) {
 				entity.setProduct(this.getProdRepo().findOne(entity.getProduct().getId()));
 			}

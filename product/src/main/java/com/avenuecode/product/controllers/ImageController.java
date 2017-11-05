@@ -85,10 +85,12 @@ public class ImageController extends BaseController<Image, Long> {
 	 * @return
 	 */
 	@RequestMapping(value = "/image", produces = { "application/json" }, method = { RequestMethod.PUT })
-	public @ResponseBody Response<Long> editProduct(@RequestBody Image image) {
+	public @ResponseBody Response<Long> editImage(@RequestBody Image image) {
 
-		this.getService().update(image);
-		return new Response<Long>(SUCCESS, null, null);
+		return new Response<Long>(() -> {
+			this.getService().update(image);
+			return null;
+		});
 
 	}
 
@@ -100,8 +102,10 @@ public class ImageController extends BaseController<Image, Long> {
 	@RequestMapping(value = "/image/{id}", produces = { "application/json" }, method = { RequestMethod.DELETE })
 	public @ResponseBody Response<Long> removeImageById(@PathVariable Long id) {
 
-		this.getService().remove(id);
-		return new Response<Long>(SUCCESS, null, null);
+		return new Response<Long>(() -> {
+			this.getService().remove(id);
+			return null;
+		});
 
 	}
 

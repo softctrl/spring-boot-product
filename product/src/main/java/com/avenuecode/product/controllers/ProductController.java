@@ -123,7 +123,7 @@ public class ProductController extends BaseController<Product, Long> {
 	 */
 	@RequestMapping(value = "/product/{id}/childs", produces = { "application/json" }, method = { RequestMethod.GET })
 	public @ResponseBody Response<List<Product>> getProductChildsById(@PathVariable Long id) {
-		return new Response<List<Product>>(() ->  this.getService().findProductChildsById(id));
+		return new Response<List<Product>>(() -> this.getService().findProductChildsById(id));
 	}
 
 	/**
@@ -146,8 +146,10 @@ public class ProductController extends BaseController<Product, Long> {
 	@RequestMapping(value = "/product", produces = { "application/json" }, method = { RequestMethod.PUT })
 	public @ResponseBody Response<Long> editProduct(@RequestBody Product product) {
 
-		this.getService().update(product);
-		return new Response<Long>(SUCCESS, null, null);
+		return new Response<Long>(() -> {
+			this.getService().update(product);
+			return null;
+		});
 
 	}
 
@@ -159,8 +161,10 @@ public class ProductController extends BaseController<Product, Long> {
 	@RequestMapping(value = "/product/{id}", produces = { "application/json" }, method = { RequestMethod.DELETE })
 	public @ResponseBody Response<Long> removeProductById(@PathVariable Long id) {
 
-		this.getService().remove(id);
-		return new Response<Long>(SUCCESS, null, null);
+		return new Response<Long>(() -> {
+			this.getService().remove(id);
+			return null;
+		});
 
 	}
 
