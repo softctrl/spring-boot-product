@@ -278,6 +278,7 @@ mvn test
 
 So, i think that i have covered all requirements for this challenge. I hope you enjoy this project. And also i hope that i get the job :D
 
-Also you can use the [insomnia](https://insomnia.rest/) with the provided [??????.json](https://?????er/Insomnia_2017-07-15.json) to make some tests.
+
+Also you can use the [insomnia](https://insomnia.rest/) with the provided [insomnia-env.json](https://bitbucket.org/softctrl/avenue_code/raw/f39abc067dd8e30b6b138a3b9b74e86b753aa5ee/product/insomnia-env.json) to make some tests.
 
 thanks,
