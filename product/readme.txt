@@ -19,8 +19,8 @@ Technical Specification:
 (OK)	4) The application must have a stateless API and use a database to store data.
 (OK)	5) An embedded in­memory database should be used: either H2, HSQL, SQLite or Derby.
 (OK)	6) The database and tables creation should be done by Maven or by the application.
-	7) You must provide BitBucket username. A free BitBucket account can be created at http://bitbucket.org. Once finished, you must give the user ac­recruitment read permission on your repository so that you can be evaluated.
-	8) You must provide a README.txt (plain text) or a README.md (Markdown) file at the root of your repository, explaining:
-	­     How to compile and run the application with an example for each call.
-	­     How to run the suite of automated tests.
-	­     Mention anything that was asked but not delivered and why, and any additional comments.
+(OK)	7) You must provide BitBucket username. A free BitBucket account can be created at http://bitbucket.org. Once finished, you must give the user ac­recruitment read permission on your repository so that you can be evaluated.
+(OK)	8) You must provide a README.txt (plain text) or a README.md (Markdown) file at the root of your repository, explaining:
+	­     (OK)How to compile and run the application with an example for each call.
+	­     (OK)How to run the suite of automated tests.
+	­     (OK)Mention anything that was asked but not delivered and why, and any additional comments.
