@@ -140,7 +140,7 @@ public class ProductServiceImpl implements BaseService<Product, Long> {
 	@Override
 	public void update(Product product) {
 
-		if (this.getRepo().exists(Objects.requireNonNull(product, "ERROR: Null Produto informed.").getId())) {
+		if (this.getRepo().exists(Objects.requireNonNull(product, "ERROR: Null Product informed.").getId())) {
 			product.getImages().forEach((i) -> {
 				i.setProduct(product);
 			});
@@ -161,6 +161,10 @@ public class ProductServiceImpl implements BaseService<Product, Long> {
 	public void remove(Long id) {
 
 		if (this.getRepo().exists(Objects.requireNonNull(id, "ERROR: Null Id informed."))) {
+			Product prd = this.getRepo().findOne(id);
+			Product prod2 = prd.getParentProduct();
+			prod2.getProducts().remove(prd);
+			this.getRepo().save(prod2);
 			this.getRepo().delete(id);
 		}
 

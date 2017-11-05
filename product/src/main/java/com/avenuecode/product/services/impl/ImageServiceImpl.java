@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.avenuecode.product.domain.Image;
+import com.avenuecode.product.domain.Product;
 import com.avenuecode.product.repositories.ImageRepository;
 import com.avenuecode.product.repositories.ProductRepository;
 import com.avenuecode.product.services.BaseService;
@@ -113,6 +114,10 @@ public class ImageServiceImpl implements BaseService<Image, Long> {
 	public void remove(Long id) {
 
 		if (this.getRepo().exists(Objects.requireNonNull(id, "ERROR: Null Id informed."))) {
+			Image img = this.getRepo().findOne(id);
+			Product prod = img.getProduct();
+			prod.getImages().remove(img);
+			this.getProdRepo().save(prod);
 			this.getRepo().delete(id);
 		}
 
