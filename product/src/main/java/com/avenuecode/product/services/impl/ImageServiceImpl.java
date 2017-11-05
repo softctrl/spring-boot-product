@@ -16,8 +16,33 @@ import com.avenuecode.product.repositories.ImageRepository;
 import com.avenuecode.product.repositories.ProductRepository;
 import com.avenuecode.product.services.BaseService;
 
+/*
+The MIT License (MIT)
+
+Copyright (c) 2017 Carlos Timoshenko Rodrigues Lopes
+http://www.0x09.com.br
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+*/
+
 /**
- * @author timoshenko
+ * @author carlostimoshenkorodrigueslopes@gmail.com
  *
  */
 @Service
@@ -26,6 +51,11 @@ public class ImageServiceImpl implements BaseService<Image, Long> {
 	private ImageRepository imageRepository;
 	private ProductRepository productRepository;
 
+	/**
+	 * 
+	 * @param imageRepository
+	 * @param productRepository
+	 */
 	@Autowired
 	public ImageServiceImpl(ImageRepository imageRepository, ProductRepository productRepository) {
 		this.imageRepository = imageRepository;
@@ -40,6 +70,10 @@ public class ImageServiceImpl implements BaseService<Image, Long> {
 		return Objects.requireNonNull(this.imageRepository, "ERROR: Image Repository is null!!");
 	}
 
+	/**
+	 * 
+	 * @return
+	 */
 	protected ProductRepository getProdRepo() {
 		return Objects.requireNonNull(this.productRepository, "ERROR: Product Repository is null!!");
 	}
