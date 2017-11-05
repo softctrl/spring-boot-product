@@ -329,8 +329,8 @@
 			"parentId": "wrk_21dfbb21eb6046a5a59ff7a1c381d63b",
 			"modified": 1509834124501,
 			"created": 1509834048745,
-			"url": "http://localhost:8070/product/1/chields",
-			"name": "Get Product Chields By ID",
+			"url": "http://localhost:8070/product/1/childs",
+			"name": "Get Product Childs By ID",
 			"description": "",
 			"method": "GET",
 			"body": {

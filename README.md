@@ -24,7 +24,7 @@ Technical Specification:
 4. The application must have a stateless API and use a database to store data.
 5. An embedded in­memory database should be used: either H2, HSQL, SQLite or Derby.
 6. The database and tables creation should be done by Maven or by the application.
-7. You must provide BitBucket username. A free BitBucket account can be created at http://bitbucket.org. Once finished, you must give the user ac­recruitment read permission on your repository so that you can be evaluated.
+7. You must provide BitBucket username. A free BitBucket account can be created at http://bitbucket.org. Once finished, you must give the user ac-­recruitment read permission on your repository so that you can be evaluated.
 8. You must provide a README.txt (plain text) or a README.md (Markdown) file at the root of your repository, explaining:
     1. How to compile and run the application with an example for each call.
     2. How to run the suite of automated tests.
@@ -40,22 +40,222 @@ First, i need to tell all tools and version of those tool that i have used to ma
 | Development Tool | Version | URL |
 | --------------------- | --------------------- | --------------------- |
 |Eclipse Java EE IDE for Web Developers.|Oxygen Release (4.7.0)|https://www.eclipse.org|
-||||
+|Apache Maven|3.5.0|https://maven.apache.org/|
+|Oracle Java SE 8|1.8.0_25|http://www.oracle.com/technetwork/java/javase/downloads/index.html|
 
+So, to make some tests you only need the Oracle Java JDK, and the Apache Maven on your environment.
 
+Assuming that you already have configured your environment we can go to the next items.
 
+First you need to make a git clone for a local folder on your computer. 
 
+```
+git clone https://ac-­recruitment@bitbucket.org/softctrl/avenue_code.git && \
+cd avenue_code/product && \
+echo "## Done" 
+```
 
 ### Item 8 - Subitem 1
 
+Now that you already have the source code and you are inside the project folder. I just need to execute the command bellow to compile and the run the project:
+ 
+```
+mvn install &&
+mvn spring-boot:run 
+```
 
+So, the database has no data at that moment, so you need first to put some data into the project.
+
+On another terminal you can execute cUrl commands as follow:
+
+1. Insert one Product:
 
 ```
-mkdir tests && cd tests && \
-wget -c https://sv.sh && chmod +x setup_env.sh && \
-./v.sh
+curl --request POST \
+  --url http://localhost:8070/product \
+  --header 'content-type: application/json' \
+  --data '{
+	"name": "Cesta Basica",
+	"description": "Cesta Basica BH",
+	"images":[
+		{"type":"jpg"}
+	]
+}'
 ```
 
+2. Insert another product that have a parent product:
+
+```
+curl --request POST \
+  --url http://localhost:8070/product \
+  --header 'content-type: application/json' \
+  --data '{
+	"name": "Feijao",
+	"description": "Feijao Carioca 5kg",
+	"images":[
+		{"type":"jpg"}
+	],
+  "parentProduct":{
+		"id": 1
+	}	
+	
+}'
+```
+
+That item you can execute as many as you want, just change the Json data to any value that you want.
+
+Now that you have data on the database you can do as follow:
+
+a. Create Products, we just make this a few steps ago :D :
+
+```
+curl --request POST \
+  --url http://localhost:8070/product \
+  --header 'content-type: application/json' \
+  --data '{
+		"id": 1,
+		"name": "Cesta Basica",
+		"description": "Cesta Basica BH",
+		"images": [
+			{
+				"id": 1,
+				"type": "jpg"
+			}
+		],
+		"products": [
+			{
+				"id": 2,
+				"name": "Feijao",
+				"description": "Feijao Carioca 5kg",
+				"images": [
+					{
+						"id": 2,
+						"type": "jpg"
+					}
+				]
+			}
+		]
+}'
+
+```
+
+b. Update Products:
+
+```
+curl --request PUT \
+  --url http://localhost:8070/product \
+  --header 'content-type: application/json' \
+  --data '{
+	"id":1,
+	"name": "Cesta Nao Tao Basica",
+	"description": "Cesta Nao Tao Basica BH"
+}'
+```
+
+c. Delete Products:
+
+```
+curl --request DELETE \
+  --url http://localhost:8070/product/3 \
+  --header 'content-type: application/json'
+```
+
+You just need to inform the id of the product that you want to remove.
+
+d. Create Images:
+
+```
+curl --request POST \
+  --url http://localhost:8070/image \
+  --header 'content-type: application/json' \
+  --data '{
+	"product": {
+		"id": 1
+	},
+	"type":"jpg"
+}'
+```
+
+e. Update Images:
+
+```
+curl --request PUT \
+  --url http://localhost:8070/product \
+  --header 'content-type: application/json' \
+  --data '{
+	"product": {
+		"id": 1
+	},
+	"type":"jpg"
+}'
+```
+
+f. Delete Images:
+
+```
+curl --request DELETE \
+  --url http://localhost:8070/image/1 \
+  --header 'content-type: application/json'
+```
+
+You just need to inform the id of the image that you want to remove.
+
+g. Get all products excluding relationships (child products, images):
+
+```
+curl --request GET \
+  --url 'http://localhost:8070/product?all=false' \
+  --header 'content-type: application/json'
+```
+
+Here you only need to inform the query parameter "all=false" and i will give you only product information without relationships.
+
+h. Get all products including specified relationships (child product and/or images):
+
+```
+curl --request GET \
+  --url 'http://localhost:8070/product?all=true' \
+  --header 'content-type: application/json'
+```
+
+Here you only need to inform the query parameter "all=true" and i will give you all data that we have of all products.
+
+i. Same as (3) -> (g) using specific product identity:
+
+```
+curl --request GET \
+  --url 'http://localhost:8070/product/1?all=false' \
+  --header 'content-type: application/json'
+```
+
+As you can see the "all" parameter still exists, you only need to inform a valid id first.
+
+j. Same as (4) -> (h) using specific product identity:
+
+```
+curl --request GET \
+  --url 'http://localhost:8070/product/1?all=true' \
+  --header 'content-type: application/json'
+```
+
+k. Get set of child products for specific product:
+
+So, to Get child products for a specific product you need to perform this:
+
+```
+curl --request GET \
+  --url http://localhost:8070/product/1/chields \
+  --header 'content-type: application/json'
+```
+
+You only need to inform a valid id.
+
+To set any child for a product you can use the command on (a).
+
+
+
+
+????????????????????
 Also you can use the [insomnia](https://insomnia.rest/) with the provided [??????.json](https://?????er/Insomnia_2017-07-15.json) to make some tests.
 
 You need to use a machine:

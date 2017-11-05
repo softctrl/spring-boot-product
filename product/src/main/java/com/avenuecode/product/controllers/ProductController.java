@@ -96,9 +96,9 @@ public class ProductController extends BaseController<Product, Long> {
 	 * @param id
 	 * @return
 	 */
-	@RequestMapping(value = "/product/{id}/chields", produces = { "application/json" }, method = { RequestMethod.GET })
-	public @ResponseBody Response<List<Product>> getProductChieldsById(@PathVariable Long id) {
-		return new Response<List<Product>>(SUCCESS, null, this.getService().findProductChieldsById(id));
+	@RequestMapping(value = "/product/{id}/childs", produces = { "application/json" }, method = { RequestMethod.GET })
+	public @ResponseBody Response<List<Product>> getProductChildsById(@PathVariable Long id) {
+		return new Response<List<Product>>(SUCCESS, null, this.getService().findProductChildsById(id));
 	}
 
 	/**

@@ -31,7 +31,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @NamedQueries(value = {
 		@NamedQuery(name = Product.Constants.FIND_ALL_PRODUCTS, lockMode = LockModeType.NONE, query = "SELECT new Product(p.id, p.name, p.description) FROM Product p ORDER BY p.id"),
 		@NamedQuery(name = Product.Constants.FIND_PRODUCT_BY_ID, lockMode = LockModeType.NONE, query = "SELECT new Product(p.id, p.name, p.description) FROM Product p WHERE p.id = ?1 ORDER BY p.id"),
-		@NamedQuery(name = Product.Constants.FIND_PRODUCT_CHIELDS_BY_ID, lockMode = LockModeType.NONE, query = "SELECT new Product(p.id, p.name, p.description) FROM Product p WHERE p.parentProduct.id = ?1 ORDER BY p.id")
+		@NamedQuery(name = Product.Constants.FIND_PRODUCT_CHILDS_BY_ID, lockMode = LockModeType.NONE, query = "SELECT new Product(p.id, p.name, p.description) FROM Product p WHERE p.parentProduct.id = ?1 ORDER BY p.id")
 })
 public class Product implements Serializable {
 
@@ -39,7 +39,7 @@ public class Product implements Serializable {
 
 		public static final String FIND_ALL_PRODUCTS = "FIND_ALL_PRODUCTS";
 		public static final String FIND_PRODUCT_BY_ID = "FIND_PRODUCT_BY_ID";
-		public static final String FIND_PRODUCT_CHIELDS_BY_ID = "FIND_PRODUCT_CHIELDS_BY_ID";
+		public static final String FIND_PRODUCT_CHILDS_BY_ID = "FIND_PRODUCT_CHILDS_BY_ID";
 		public static final String FIND_PRODUCT_IMAGES_BY_ID = "FIND_PRODUCT_IMAGES_BY_ID";
 
 	}

@@ -36,7 +36,7 @@ public interface ProductRepository extends CrudRepository<Product, Long> {
 	 * @param id
 	 * @return
 	 */
-	@Query(name = Product.Constants.FIND_PRODUCT_CHIELDS_BY_ID)
-	List<Product> findProductChieldsById(Long id);
+	@Query(name = Product.Constants.FIND_PRODUCT_CHILDS_BY_ID)
+	List<Product> findProductChildsById(Long id);
 
 }

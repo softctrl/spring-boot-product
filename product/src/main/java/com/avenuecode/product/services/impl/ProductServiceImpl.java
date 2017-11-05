@@ -95,9 +95,9 @@ public class ProductServiceImpl implements BaseService<Product, Long> {
 	 * @param id
 	 * @return
 	 */
-	public List<Product> findProductChieldsById(Long id) {
+	public List<Product> findProductChildsById(Long id) {
 
-		return this.getRepo().findProductChieldsById(id);
+		return this.getRepo().findProductChildsById(id);
 
 	}
 
