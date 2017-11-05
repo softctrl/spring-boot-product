@@ -150,8 +150,10 @@ public class ImageServiceImpl implements BaseService<Image, Long> {
 		if (this.getRepo().exists(Objects.requireNonNull(id, "ERROR: Null Id informed."))) {
 			Image img = this.getRepo().findOne(id);
 			Product prod = img.getProduct();
-			prod.getImages().remove(img);
-			this.getProdRepo().save(prod);
+			if (Objects.nonNull(prod.getImages())) {
+				prod.getImages().remove(img);
+				this.getProdRepo().save(prod);
+			}
 			this.getRepo().delete(id);
 		}
 
