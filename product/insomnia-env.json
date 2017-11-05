@@ -1,0 +1,397 @@
+{
+	"_type": "export",
+	"__export_format": 3,
+	"__export_date": "2017-11-05T00:22:45.187Z",
+	"__export_source": "insomnia.desktop.app:v5.8.3",
+	"resources": [
+		{
+			"_id": "wrk_21dfbb21eb6046a5a59ff7a1c381d63b",
+			"parentId": null,
+			"modified": 1504994837352,
+			"created": 1504994837352,
+			"name": "AvenueCode",
+			"description": "",
+			"certificates": [],
+			"_type": "workspace"
+		},
+		{
+			"_id": "env_4958ced5e72a4b218496520213d74cef",
+			"parentId": "wrk_21dfbb21eb6046a5a59ff7a1c381d63b",
+			"modified": 1504994845288,
+			"created": 1504994845288,
+			"name": "Base Environment",
+			"data": {},
+			"color": null,
+			"isPrivate": false,
+			"_type": "environment"
+		},
+		{
+			"_id": "jar_f53e5f316855444ab167b82b2cba8826",
+			"parentId": "wrk_21dfbb21eb6046a5a59ff7a1c381d63b",
+			"modified": 1504994855383,
+			"created": 1504994855383,
+			"name": "Default Jar",
+			"cookies": [],
+			"_type": "cookie_jar"
+		},
+		{
+			"_id": "req_f8328de6bc4d40d29823392094995f9c",
+			"parentId": "wrk_21dfbb21eb6046a5a59ff7a1c381d63b",
+			"modified": 1509840502714,
+			"created": 1504994845157,
+			"url": "http://localhost:8070/product?all=true",
+			"name": "Get All Products",
+			"description": "",
+			"method": "GET",
+			"body": {
+				"mimeType": "application/json",
+				"text": ""
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Content-Type",
+					"value": "application/json",
+					"id": "pair_4eae73eff29644e496d97fc5a685dc63"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1504738209601.5,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_e338b076b23749f49b493106bc746523",
+			"parentId": "wrk_21dfbb21eb6046a5a59ff7a1c381d63b",
+			"modified": 1509833130129,
+			"created": 1509781988786,
+			"url": "http://localhost:8070/product",
+			"name": "Insert Product (No Parent)",
+			"description": "",
+			"method": "POST",
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"name\": \"Cesta Basica\",\n\t\"description\": \"Cesta Basica BH\",\n\t\"images\":[\n\t\t{\"type\":\"jpg\"}\n\t]\n}"
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Content-Type",
+					"value": "application/json",
+					"id": "pair_4eae73eff29644e496d97fc5a685dc63"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1504738209582.75,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_e46eda758a9a498588b5b0b54b76dec9",
+			"parentId": "wrk_21dfbb21eb6046a5a59ff7a1c381d63b",
+			"modified": 1509840636015,
+			"created": 1509782470383,
+			"url": "http://localhost:8070/product/1?all=false",
+			"name": "Get Product By ID",
+			"description": "",
+			"method": "GET",
+			"body": {
+				"mimeType": "application/json",
+				"text": ""
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Content-Type",
+					"value": "application/json",
+					"id": "pair_4eae73eff29644e496d97fc5a685dc63"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1504738209589,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_702581e272204b3a881f0b871ce2b6ed",
+			"parentId": "wrk_21dfbb21eb6046a5a59ff7a1c381d63b",
+			"modified": 1509833138093,
+			"created": 1509782869017,
+			"url": "http://localhost:8070/product",
+			"name": "Update Product",
+			"description": "",
+			"method": "PUT",
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"id\":1,\n\t\"name\": \"Arroz\",\n\t\"description\": \"Arroz Integral\"\n}"
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Content-Type",
+					"value": "application/json",
+					"id": "pair_4eae73eff29644e496d97fc5a685dc63"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1504738209578.0625,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_2e1ac5c034274764b99a8f13952fd431",
+			"parentId": "wrk_21dfbb21eb6046a5a59ff7a1c381d63b",
+			"modified": 1509833139900,
+			"created": 1509783240477,
+			"url": "http://localhost:8070/product/3",
+			"name": "Delete Product",
+			"description": "",
+			"method": "DELETE",
+			"body": {
+				"mimeType": "application/json",
+				"text": ""
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Content-Type",
+					"value": "application/json",
+					"id": "pair_4eae73eff29644e496d97fc5a685dc63"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1504738209577.2812,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_c35f429fca2f42a5b36daf2c76a1f90b",
+			"parentId": "wrk_21dfbb21eb6046a5a59ff7a1c381d63b",
+			"modified": 1509803966261,
+			"created": 1509803951953,
+			"url": "http://localhost:8070/image",
+			"name": "Get All Images",
+			"description": "",
+			"method": "GET",
+			"body": {
+				"mimeType": "application/json",
+				"text": ""
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Content-Type",
+					"value": "application/json",
+					"id": "pair_4eae73eff29644e496d97fc5a685dc63"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1504738209576.5,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_ee7c87b2872545bd8938f37ae5f449e5",
+			"parentId": "wrk_21dfbb21eb6046a5a59ff7a1c381d63b",
+			"modified": 1509833135081,
+			"created": 1509822019691,
+			"url": "http://localhost:8070/image",
+			"name": "Insert Image",
+			"description": "",
+			"method": "POST",
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"product\": {\n\t\t\"id\": 1\n\t},\n\t\"type\":\"jpg\"\n}"
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Content-Type",
+					"value": "application/json",
+					"id": "pair_4eae73eff29644e496d97fc5a685dc63"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1504738209560.875,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_8280057f00de4e059c311aea71b587dd",
+			"parentId": "wrk_21dfbb21eb6046a5a59ff7a1c381d63b",
+			"modified": 1509836908552,
+			"created": 1509829199459,
+			"url": "http://localhost:8070/product",
+			"name": "Insert Product (With Parent)",
+			"description": "",
+			"method": "POST",
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"name\": \"Feijao\",\n\t\"description\": \"Feijao Carioca 5kg\",\n\t\"images\":[\n\t\t{\"type\":\"jpg\"}\n\t],\n  \"parentProduct\":{\n\t\t\"id\": 1\n\t}\t\n\t\n}"
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Content-Type",
+					"value": "application/json",
+					"id": "pair_4eae73eff29644e496d97fc5a685dc63"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1504738209579.625,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_fd9e57c69ee94714814de4adf65d56fa",
+			"parentId": "wrk_21dfbb21eb6046a5a59ff7a1c381d63b",
+			"modified": 1509840617632,
+			"created": 1509833164288,
+			"url": "http://localhost:8070/image/5",
+			"name": "Get Image By ID",
+			"description": "",
+			"method": "GET",
+			"body": {
+				"mimeType": "application/json",
+				"text": ""
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Content-Type",
+					"value": "application/json",
+					"id": "pair_4eae73eff29644e496d97fc5a685dc63"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1504738209568.6875,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_b221e28e9f9048afa37d506361ef3416",
+			"parentId": "wrk_21dfbb21eb6046a5a59ff7a1c381d63b",
+			"modified": 1509833214046,
+			"created": 1509833190478,
+			"url": "http://localhost:8070/image/1",
+			"name": "Delete Image",
+			"description": "",
+			"method": "DELETE",
+			"body": {
+				"mimeType": "application/json",
+				"text": ""
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Content-Type",
+					"value": "application/json",
+					"id": "pair_4eae73eff29644e496d97fc5a685dc63"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1504609891753.4375,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_ddbf5ab9fea14f14a20b003c63933bef",
+			"parentId": "wrk_21dfbb21eb6046a5a59ff7a1c381d63b",
+			"modified": 1509834124501,
+			"created": 1509834048745,
+			"url": "http://localhost:8070/product/1/chields",
+			"name": "Get Product Chields By ID",
+			"description": "",
+			"method": "GET",
+			"body": {
+				"mimeType": "application/json",
+				"text": ""
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Content-Type",
+					"value": "application/json",
+					"id": "pair_4eae73eff29644e496d97fc5a685dc63"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1504738209585.875,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_a2722998bdb746468d3fc4351d099cae",
+			"parentId": "wrk_21dfbb21eb6046a5a59ff7a1c381d63b",
+			"modified": 1509840603939,
+			"created": 1509835451401,
+			"url": "http://localhost:8070/product/10/images",
+			"name": "Get Product Images By ID",
+			"description": "",
+			"method": "GET",
+			"body": {
+				"mimeType": "application/json",
+				"text": ""
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Content-Type",
+					"value": "application/json",
+					"id": "pair_4eae73eff29644e496d97fc5a685dc63"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1504738209584.3125,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "env_970b3e9bb26747acbec1b3c1c0e2e8cd",
+			"parentId": "env_4958ced5e72a4b218496520213d74cef",
+			"modified": 1509763342164,
+			"created": 1509763320503,
+			"name": "AvenueCode Test",
+			"data": {},
+			"color": "#0139cb",
+			"isPrivate": false,
+			"_type": "environment"
+		}
+	]
+}
