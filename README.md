@@ -247,7 +247,7 @@ So, to Get child products for a specific product you need to perform this:
 
 ```
 curl --request GET \
-  --url http://localhost:8070/product/1/chields \
+  --url http://localhost:8070/product/1/childs \
   --header 'content-type: application/json'
 ```
 
@@ -261,7 +261,7 @@ So, to Get images for a specific product you need to perform this:
 
 ```
 curl --request GET \
-  --url http://localhost:8070/image/1 \
+  --url http://localhost:8070/product/10/images \
   --header 'content-type: application/json'
 ```
 
