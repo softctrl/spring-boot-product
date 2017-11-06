@@ -18,6 +18,7 @@ This project cover all those features here:
 3. Build JPA/Hibernate classes using annotations to persist these objects in the database
 
 Technical Specification:
+
 1. Maven must be used to build, run tests and start the application.
 2. The tests must be started with the mvn test command.
 3. The application must start with a Maven command: mvn exec:java, mvn jetty:run, mvn spring­boot:run, etc.
