@@ -61,7 +61,7 @@ echo "## Done"
 Now that you already have the source code and you are inside the project folder. You just need to execute the command bellow to compile and the run the project:
  
 ```
-mvn install &&
+mvn install && \
 mvn spring-boot:run 
 ```
 
