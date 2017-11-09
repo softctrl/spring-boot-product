@@ -94,7 +94,7 @@ public class ProductTest {
 			Assert.assertEquals(++c, this.productService.count());
 		});
 
-		// Asert we have many images as products:
+		// Asert we have 10x images as products:
 		Assert.assertEquals(this.productService.count() * 10, this.imageService.count());
 
 		// Remove one by one:
