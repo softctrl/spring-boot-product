@@ -1,6 +1,6 @@
 # Product CRUD - SpringBoot
 
-I develop this project to solve a chaeng for a job oportunity in the AvenueCode.
+I develop this project to solve a challeng for a job oportunity.
 
 This project cover all those features here:
 
@@ -51,8 +51,8 @@ Assuming that you already have configured your environment we can go to the next
 First you need to make a git clone for a local folder on your computer. 
 
 ```
-git clone https://ac-­recruitment@bitbucket.org/softctrl/avenue_code.git && \
-cd avenue_code/product && \
+git clone https://github.com/softctrl/spring-boot-product.git && \
+cd spring-boot-product/product && \
 echo "## Done" 
 ```
 
@@ -281,6 +281,6 @@ mvn test
 So, i think that i have covered all requirements for this challenge. I hope you enjoy this project. And also i hope that i get the job :D
 
 
-Also you can use the [insomnia](https://insomnia.rest/) with the provided [insomnia-env.json](https://bitbucket.org/softctrl/avenue_code/raw/f39abc067dd8e30b6b138a3b9b74e86b753aa5ee/product/insomnia-env.json) to make some tests.
+Also you can use the [insomnia](https://insomnia.rest/) with the provided [insomnia-env.json](https://raw.githubusercontent.com/softctrl/spring-boot-product/master/product/insomnia-env.json) to make some tests.
 
 thanks,
