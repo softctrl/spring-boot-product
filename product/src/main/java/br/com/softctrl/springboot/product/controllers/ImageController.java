@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.avenuecode.product.controllers;
+package br.com.softctrl.springboot.product.controllers;
 
 import java.util.List;
 
@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.avenuecode.product.domain.Image;
+import br.com.softctrl.springboot.product.domain.Image;
 
 /*
 The MIT License (MIT)

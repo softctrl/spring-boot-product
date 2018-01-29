@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.avenuecode.product.domain;
+package br.com.softctrl.springboot.product.domain;
 
 import java.io.Serializable;
 import java.util.List;

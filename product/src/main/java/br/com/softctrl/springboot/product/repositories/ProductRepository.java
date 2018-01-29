@@ -1,9 +1,14 @@
 /**
  * 
  */
-package com.avenuecode.product.services;
+package br.com.softctrl.springboot.product.repositories;
 
 import java.util.List;
+
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.CrudRepository;
+
+import br.com.softctrl.springboot.product.domain.Product;
 
 /*
 The MIT License (MIT)
@@ -31,50 +36,32 @@ SOFTWARE.
 */
 
 /**
- * 
  * @author carlostimoshenkorodrigueslopes@gmail.com
  *
- * @param <E>
- * @param <I>
  */
-public interface BaseService<E, I> {
+public interface ProductRepository extends CrudRepository<Product, Long> {
 
 	/**
 	 * 
-	 * @param entity
 	 * @return
 	 */
-	Long insert(E entity);
+	@Query(name = Product.Constants.FIND_ALL_PRODUCTS)
+	List<Product> findAllProducts();
 
 	/**
 	 * 
 	 * @param id
 	 * @return
 	 */
-	E findById(I id);
-
-	/**
-	 * 
-	 * @return
-	 */
-	List<E> findAll();
-
-	/**
-	 * 
-	 * @param entity
-	 */
-	void update(E entity);
+	@Query(name = Product.Constants.FIND_PRODUCT_BY_ID)
+	List<Product> findProductById(Long id);
 
 	/**
 	 * 
 	 * @param id
-	 */
-	void remove(I id);
-
-	/**
-	 * 
 	 * @return
 	 */
-	long count();
+	@Query(name = Product.Constants.FIND_PRODUCT_CHILDS_BY_ID)
+	List<Product> findProductChildsById(Long id);
 
 }

@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.avenuecode.product.services.impl;
+package br.com.softctrl.springboot.product.services.impl;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,11 +10,11 @@ import java.util.Objects;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.avenuecode.product.domain.Image;
-import com.avenuecode.product.domain.Product;
-import com.avenuecode.product.repositories.ImageRepository;
-import com.avenuecode.product.repositories.ProductRepository;
-import com.avenuecode.product.services.BaseService;
+import br.com.softctrl.springboot.product.domain.Image;
+import br.com.softctrl.springboot.product.domain.Product;
+import br.com.softctrl.springboot.product.repositories.ImageRepository;
+import br.com.softctrl.springboot.product.repositories.ProductRepository;
+import br.com.softctrl.springboot.product.services.BaseService;
 
 /*
 The MIT License (MIT)
@@ -81,7 +81,7 @@ public class ImageServiceImpl implements BaseService<Image, Long> {
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see com.avenuecode.product.services.BaseService#insert(java.lang.Object)
+	 * @see br.com.softctrl.springboot.product.services.BaseService#insert(java.lang.Object)
 	 */
 	@Override
 	public Long insert(Image entity) {
@@ -94,7 +94,7 @@ public class ImageServiceImpl implements BaseService<Image, Long> {
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see com.avenuecode.product.services.BaseService#findById(java.lang.Object)
+	 * @see br.com.softctrl.springboot.product.services.BaseService#findById(java.lang.Object)
 	 */
 	@Override
 	public Image findById(Long id) {
@@ -113,7 +113,7 @@ public class ImageServiceImpl implements BaseService<Image, Long> {
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see com.avenuecode.product.services.BaseService#findAll()
+	 * @see br.com.softctrl.springboot.product.services.BaseService#findAll()
 	 */
 	@Override
 	public List<Image> findAll() {
@@ -125,7 +125,7 @@ public class ImageServiceImpl implements BaseService<Image, Long> {
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see com.avenuecode.product.services.BaseService#update(java.lang.Object)
+	 * @see br.com.softctrl.springboot.product.services.BaseService#update(java.lang.Object)
 	 */
 	@Override
 	public void update(Image entity) {
@@ -145,7 +145,7 @@ public class ImageServiceImpl implements BaseService<Image, Long> {
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see com.avenuecode.product.services.BaseService#remove(java.lang.Object)
+	 * @see br.com.softctrl.springboot.product.services.BaseService#remove(java.lang.Object)
 	 */
 	@Override
 	public void remove(Long id) {
@@ -165,7 +165,7 @@ public class ImageServiceImpl implements BaseService<Image, Long> {
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see com.avenuecode.product.services.BaseService#count()
+	 * @see br.com.softctrl.springboot.product.services.BaseService#count()
 	 */
 	@Override
 	public long count() {

@@ -1,10 +1,9 @@
 /**
  * 
  */
-package com.avenuecode.product;
+package br.com.softctrl.springboot.product.services;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import java.util.List;
 
 /*
 The MIT License (MIT)
@@ -35,16 +34,47 @@ SOFTWARE.
  * 
  * @author carlostimoshenkorodrigueslopes@gmail.com
  *
+ * @param <E>
+ * @param <I>
  */
-@SpringBootApplication
-public class BootService {
+public interface BaseService<E, I> {
 
 	/**
 	 * 
-	 * @param args
+	 * @param entity
+	 * @return
 	 */
-	public static void main(String[] args) {
-		SpringApplication.run(BootService.class, args);
-	}
+	Long insert(E entity);
+
+	/**
+	 * 
+	 * @param id
+	 * @return
+	 */
+	E findById(I id);
+
+	/**
+	 * 
+	 * @return
+	 */
+	List<E> findAll();
+
+	/**
+	 * 
+	 * @param entity
+	 */
+	void update(E entity);
+
+	/**
+	 * 
+	 * @param id
+	 */
+	void remove(I id);
+
+	/**
+	 * 
+	 * @return
+	 */
+	long count();
 
 }

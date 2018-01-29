@@ -9,13 +9,13 @@
 		<relativePath />
 	</parent>
 
-	<groupId>com.avenuecode</groupId>
+	<groupId>br.com.softctrl.springboot</groupId>
 	<artifactId>product</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<name>product</name>
-	<description>Project with CRUD operation - AvenueCode</description>
+	<description>Project with CRUD operation</description>
 	<url>http://maven.apache.org</url>
 
 

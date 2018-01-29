@@ -1,14 +1,10 @@
 /**
  * 
  */
-package com.avenuecode.product.repositories;
+package br.com.softctrl.springboot.product;
 
-import java.util.List;
-
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.CrudRepository;
-
-import com.avenuecode.product.domain.Product;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /*
 The MIT License (MIT)
@@ -36,32 +32,19 @@ SOFTWARE.
 */
 
 /**
+ * 
  * @author carlostimoshenkorodrigueslopes@gmail.com
  *
  */
-public interface ProductRepository extends CrudRepository<Product, Long> {
+@SpringBootApplication
+public class BootService {
 
 	/**
 	 * 
-	 * @return
+	 * @param args
 	 */
-	@Query(name = Product.Constants.FIND_ALL_PRODUCTS)
-	List<Product> findAllProducts();
-
-	/**
-	 * 
-	 * @param id
-	 * @return
-	 */
-	@Query(name = Product.Constants.FIND_PRODUCT_BY_ID)
-	List<Product> findProductById(Long id);
-
-	/**
-	 * 
-	 * @param id
-	 * @return
-	 */
-	@Query(name = Product.Constants.FIND_PRODUCT_CHILDS_BY_ID)
-	List<Product> findProductChildsById(Long id);
+	public static void main(String[] args) {
+		SpringApplication.run(BootService.class, args);
+	}
 
 }

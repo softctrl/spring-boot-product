@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.avenuecode.product.controllers;
+package br.com.softctrl.springboot.product.controllers;
 
 import java.util.List;
 
@@ -14,11 +14,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.avenuecode.product.domain.Image;
-import com.avenuecode.product.domain.Product;
-import com.avenuecode.product.services.BaseService;
-import com.avenuecode.product.services.impl.ImageServiceImpl;
-import com.avenuecode.product.services.impl.ProductServiceImpl;
+import br.com.softctrl.springboot.product.domain.Image;
+import br.com.softctrl.springboot.product.domain.Product;
+import br.com.softctrl.springboot.product.services.BaseService;
+import br.com.softctrl.springboot.product.services.impl.ImageServiceImpl;
+import br.com.softctrl.springboot.product.services.impl.ProductServiceImpl;
 
 /*
 The MIT License (MIT)
@@ -66,7 +66,7 @@ public class ProductController extends BaseController<Product, Long> {
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see com.avenuecode.product.controllers.BaseController#getService()
+	 * @see br.com.softctrl.springboot.product.controllers.BaseController#getService()
 	 */
 	@Override
 	protected ProductServiceImpl getService() {

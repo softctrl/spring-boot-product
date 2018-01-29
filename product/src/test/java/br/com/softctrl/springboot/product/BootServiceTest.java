@@ -1,14 +1,12 @@
 /**
  * 
  */
-package com.avenuecode.product.repositories;
+package br.com.softctrl.springboot.product;
 
-import java.util.List;
-
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.CrudRepository;
-
-import com.avenuecode.product.domain.Image;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
 
 /*
 The MIT License (MIT)
@@ -36,17 +34,16 @@ SOFTWARE.
 */
 
 /**
+ * 
  * @author carlostimoshenkorodrigueslopes@gmail.com
  *
  */
-public interface ImageRepository extends CrudRepository<Image, Long> {
+@RunWith(SpringRunner.class)
+@SpringBootTest
+public class BootServiceTest {
 
-	/**
-	 * 
-	 * @param id
-	 * @return
-	 */
-	@Query(name = Image.Constants.FIND_IMAGES_BY_PRODUCT_ID)
-	List<Image> findAllImagesByProductId(Long id);
+	@Test
+	public void contextLoads() {
+	}
 
 }

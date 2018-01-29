@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.avenuecode.product;
+package br.com.softctrl.springboot.product;
 
 import org.springframework.boot.context.embedded.EmbeddedServletContainerCustomizer;
 import org.springframework.context.annotation.Bean;

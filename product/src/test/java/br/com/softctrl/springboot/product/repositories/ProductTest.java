@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.avenuecode.product.repositories;
+package br.com.softctrl.springboot.product.repositories;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,10 +14,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import com.avenuecode.product.domain.Image;
-import com.avenuecode.product.domain.Product;
-import com.avenuecode.product.services.impl.ImageServiceImpl;
-import com.avenuecode.product.services.impl.ProductServiceImpl;
+import br.com.softctrl.springboot.product.domain.Image;
+import br.com.softctrl.springboot.product.domain.Product;
+import br.com.softctrl.springboot.product.services.impl.ImageServiceImpl;
+import br.com.softctrl.springboot.product.services.impl.ProductServiceImpl;
 
 /*
 The MIT License (MIT)

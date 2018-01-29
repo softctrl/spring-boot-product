@@ -1,14 +1,15 @@
 /**
  * 
  */
-package com.avenuecode.product.controllers;
+package br.com.softctrl.springboot.product.controllers;
 
 import java.util.Objects;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.avenuecode.product.services.BaseService;
 import com.fasterxml.jackson.annotation.JsonInclude;
+
+import br.com.softctrl.springboot.product.services.BaseService;
 
 /*
 The MIT License (MIT)

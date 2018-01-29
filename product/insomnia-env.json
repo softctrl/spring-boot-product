@@ -9,7 +9,7 @@
 			"parentId": null,
 			"modified": 1509898727860,
 			"created": 1504994837352,
-			"name": "AvenueCode Challenge",
+			"name": "Springboot Project",
 			"description": "",
 			"_type": "workspace"
 		},
@@ -415,7 +415,7 @@
 			"parentId": "env_4958ced5e72a4b218496520213d74cef",
 			"modified": 1509763342164,
 			"created": 1509763320503,
-			"name": "AvenueCode Test",
+			"name": "Springboot Test",
 			"data": {},
 			"color": "#0139cb",
 			"isPrivate": false,
